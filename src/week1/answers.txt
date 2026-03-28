@@ -1,0 +1,18 @@
+Answers for Exercise 6.1:
+
+Question 1: What happens if users choose "Cancel"?
+Trả lời: 
+Trong đoạn code hiện hành, chương trình sử dụng toán tử ba ngôi: (option == JOptionPane.YES_OPTION ? "Yes" : "No"). Khi người dùng bấm nút "Cancel" (hoặc nhấn dấu X để đóng hộp thoại), phương thức sẽ trả về giá trị là JOptionPane.CANCEL_OPTION (hoặc CLOSED_OPTION). Vì giá trị này khác với YES_OPTION, điều kiện sẽ bị sai (false). Do đó, chương trình sẽ mặc định rẽ vào vế sau và in ra thông báo: "You've chosen: No".
+
+Question 2: How to customize the options to users, e.g. only two options: "Yes" and "No", OR "I do" and "I don't"?
+Trả lời:
+1. Để chỉ hiển thị 2 nút mặc định là "Yes" và "No": Ta cần truyền thêm tham số 'JOptionPane.YES_NO_OPTION' vào phương thức showConfirmDialog.
+Ví dụ: 
+int option = JOptionPane.showConfirmDialog(null, "Thông báo", "Tiêu đề", JOptionPane.YES_NO_OPTION);
+
+2. Để thay đổi hoàn toàn chữ trên nút theo ý muốn (ví dụ "I do" và "I don't"): Ta không dùng showConfirmDialog nữa mà phải chuyển sang dùng phương thức showOptionDialog, đồng thời truyền vào một mảng (array) chứa các chữ mà ta muốn hiển thị trên nút.
+Ví dụ:
+Object[] options = {"I do", "I don't"};
+int option = JOptionPane.showOptionDialog(null, "Bạn có đồng ý không?", "Tùy chọn", 
+             JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, 
+             null, options, options[0]);
