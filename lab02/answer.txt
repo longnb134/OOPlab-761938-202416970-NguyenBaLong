@@ -1,7 +1,4 @@
-Answer for Section 10:
-No, Java does not allow this. If you create a constructor by title
-DigitalVideoDisc(String title) and another by category
-DigitalVideoDisc(String category), they will both have the exact same
-signature: DigitalVideoDisc(String). Java cannot distinguish between
-them, which violates the rules of method overloading (signatures must differ in
-the number or types of parameters).
+Answer for Section 14:
+Java provides a feature called varargs using the syntax: addDigitalVideoDisc(DigitalVideoDisc... dvdList).
+I prefer using varargs over an array parameter. Varargs allows the method to accept either an array or a comma-separated list of individual objects directly. 
+This makes method calls cleaner without requiring the user to explicitly create an array.
