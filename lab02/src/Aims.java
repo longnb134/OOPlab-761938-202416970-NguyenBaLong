@@ -13,6 +13,12 @@ public class Aims {
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
         anOrder.addDigitalVideoDisc(dvd3);
 
+        System.out.println("\n--- CART BEFORE REMOVING ---");
+        anOrder.printCart();
+
+        anOrder.removeDigitalVideoDisc(dvd2);
+
+        System.out.println("\n--- CART AFTER REMOVING ---");
         anOrder.printCart();
     }
 }
