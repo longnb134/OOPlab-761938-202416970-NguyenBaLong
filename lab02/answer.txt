@@ -1,4 +1,9 @@
-Answer for Section 14:
-Java provides a feature called varargs using the syntax: addDigitalVideoDisc(DigitalVideoDisc... dvdList).
-I prefer using varargs over an array parameter. Varargs allows the method to accept either an array or a comma-separated list of individual objects directly. 
-This makes method calls cleaner without requiring the user to explicitly create an array.
+Answer for Section 15:
+1. Is JAVA a Pass by Value or a Pass by Reference programming language?
+Java is strictly a Pass by Value programming language. 
+
+2. After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain?
+Because Java passes object references by value. The swap method only swaps the local copies of the references (o1 and o2) inside the method's scope. It does not affect the original reference variables (jungleDVD and cinderellaDVD) in the main method. They still point to their original objects.
+
+3. After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed?
+Because the copy of the reference passed to the method still points to the exact same object in memory. When we call dvd.setTitle(title), we are modifying the internal state of that original object. The later line `dvd = new DigitalVideoDisc(oldTitle)` only reassigns the local reference to a new object, which does not affect the original object outside the method.
