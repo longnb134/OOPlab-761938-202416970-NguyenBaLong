@@ -1,0 +1,7 @@
+Answer for Section 10:
+No, Java does not allow this. If you create a constructor by title
+DigitalVideoDisc(String title) and another by category
+DigitalVideoDisc(String category), they will both have the exact same
+signature: DigitalVideoDisc(String). Java cannot distinguish between
+them, which violates the rules of method overloading (signatures must differ in
+the number or types of parameters).
