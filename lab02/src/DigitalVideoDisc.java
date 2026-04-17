@@ -74,4 +74,12 @@ public class DigitalVideoDisc {
     public int getId() {
         return id;
     }
+
+    public String toString() {
+        return "DVD - " + this.getTitle() + " - " + this.getCategory() + " - " + this.getDirector() + " - " + this.getLength() + ": " + this.getCost() + " $";
+    }
+
+    public boolean isMatch(String title) {
+        return this.getTitle().toLowerCase().contains(title.toLowerCase());
+    }
 }
