@@ -1,10 +1,10 @@
 package lab02.src;
 
-public class DigitalVideoDisc extends Disc {
+public class DigitalVideoDisc extends Disc implements Playable {
     private static int nbDigitalVideoDiscs = 0;
 
     public DigitalVideoDisc(String title) {
-        super(title); 
+        super(title);
         nbDigitalVideoDiscs++;
         this.setId(nbDigitalVideoDiscs);
     }
@@ -33,5 +33,14 @@ public class DigitalVideoDisc extends Disc {
 
     public boolean isMatch(String title) {
         return this.getTitle().toLowerCase().contains(title.toLowerCase());
+    }
+
+    public void play() {
+        if (this.getLength() > 0) {
+            System.out.println("Playing DVD: " + this.getTitle());
+            System.out.println("DVD length: " + this.getLength());
+        } else {
+            System.out.println("Cannot play DVD: " + this.getTitle() + " because its length is 0 or less.");
+        }
     }
 }

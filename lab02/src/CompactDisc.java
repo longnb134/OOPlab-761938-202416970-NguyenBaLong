@@ -41,3 +41,15 @@ t
         return totalLength;
     }
 }
+public void play() {
+        if (this.getLength() > 0) {
+            System.out.println("Playing CD: " + this.getTitle());
+            System.out.println("CD total length: " + this.getLength());
+            for (Track track : tracks) {
+                track.play(); 
+            }
+        } else {
+            System.out.println("Cannot play CD: " + this.getTitle() + " because its total length is 0 or less.");
+        }
+    }
+}
