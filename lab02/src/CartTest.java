@@ -1,4 +1,4 @@
-package lab02.src;
+ackage lab02.src;
 
 public class CartTest {
     public static void main(String[] args) {
@@ -18,9 +18,9 @@ public class CartTest {
         System.out.println("\n--- Search Results ---");
         
         cart.searchById(1); 
-        cart.searchById(5); // Test case không tìm thấy
+        cart.searchById(5); 
         
         cart.searchByTitle("Star Wars");
-        cart.searchByTitle("Harry Potter"); // Test case không tìm thấy
+        cart.searchByTitle("Harry Potter"); 
     }
 }
