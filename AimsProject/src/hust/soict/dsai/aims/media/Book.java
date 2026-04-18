@@ -1,4 +1,4 @@
-package lab02.src;
+package hust.soict.dsai.aims.media;
 
 import java.util.ArrayList;
 import java.util.List;

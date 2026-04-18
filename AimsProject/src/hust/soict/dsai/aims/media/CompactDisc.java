@@ -1,8 +1,8 @@
-package lab02.src;
+package hust.soict.dsai.aims.media;
 
 import java.util.ArrayList;
 
-public class CompactDisc extends Disc {
+public class CompactDisc extends Disc implements Playable {
     private String artist;
     private ArrayList<Track> tracks = new ArrayList<Track>();
 
@@ -23,7 +23,7 @@ public class CompactDisc extends Disc {
             System.out.println("Track '" + track.getTitle() + "' has been added to the CD.");
         }
     }
-t
+
     public void removeTrack(Track track) {
         if (tracks.contains(track)) {
             tracks.remove(track);
@@ -40,16 +40,19 @@ t
         }
         return totalLength;
     }
-}
-public void play() {
+
+    public void play() {
         if (this.getLength() > 0) {
             System.out.println("Playing CD: " + this.getTitle());
             System.out.println("CD total length: " + this.getLength());
             for (Track track : tracks) {
-                track.play(); 
+                track.play();
             }
         } else {
             System.out.println("Cannot play CD: " + this.getTitle() + " because its total length is 0 or less.");
         }
+    }
+    public String toString() {
+        return "CD - " + this.getTitle() + " - " + this.getCategory() + " - " + this.getArtist() + " - " + this.getLength() + ": " + this.getCost() + " $";
     }
 }

@@ -1,6 +1,8 @@
-package lab02.src;
+package hust.soict.dsai.aims.store;
 
 import java.util.ArrayList;
+
+import hust.soict.dsai.aims.media.Media;
 
 public class Store {
     private ArrayList<Media> itemsInStore = new ArrayList<Media>();

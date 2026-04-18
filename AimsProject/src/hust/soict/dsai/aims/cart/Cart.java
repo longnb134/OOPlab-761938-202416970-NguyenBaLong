@@ -1,6 +1,7 @@
-package lab02.src;
-
+package hust.soict.dsai.aims.cart;
 import java.util.ArrayList;
+
+import hust.soict.dsai.aims.media.Media;
 
 public class Cart {
     private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
@@ -35,7 +36,7 @@ public class Cart {
         System.out.println("***********************CART***********************");
         System.out.println("Ordered Items:");
         for (int i = 0; i < itemsOrdered.size(); i++) {
-            // Tự động gọi hàm toString() tương ứng của Book, CD hoặc DVD
+        
             System.out.println((i + 1) + ". " + itemsOrdered.get(i).toString());
         }
         System.out.println("Total cost: " + totalCost() + " $");

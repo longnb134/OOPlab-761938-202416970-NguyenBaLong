@@ -1,4 +1,4 @@
-package lab02.src;
+package hust.soict.dsai.aims.media;
 
 public abstract class Media {
     private int id;

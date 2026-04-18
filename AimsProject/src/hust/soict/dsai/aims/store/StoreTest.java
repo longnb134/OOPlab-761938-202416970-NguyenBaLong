@@ -1,4 +1,8 @@
-package lab02.src;
+package hust.soict.dsai.aims.store;
+
+import hust.soict.dsai.aims.media.Book;
+import hust.soict.dsai.aims.media.CompactDisc;
+import hust.soict.dsai.aims.media.DigitalVideoDisc;
 
 public class StoreTest {
     public static void main(String[] args) {

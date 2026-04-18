@@ -1,6 +1,6 @@
-package lab02.src;
+package hust.soict.dsai.aims.media;
 
-public class Track {
+public class Track implements Playable {
     private String title;
     private int length;
 
@@ -16,8 +16,9 @@ public class Track {
     public int getLength() {
         return length;
     }
-}
-public void play() {
+
+    // Hàm play() từ interface Playable
+    public void play() {
         if (this.getLength() > 0) {
             System.out.println("Playing Track: " + this.getTitle());
             System.out.println("Track length: " + this.getLength());

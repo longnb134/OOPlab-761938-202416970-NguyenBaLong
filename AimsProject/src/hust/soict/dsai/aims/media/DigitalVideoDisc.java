@@ -1,4 +1,4 @@
-package lab02.src;
+package hust.soict.dsai.aims.media;
 
 public class DigitalVideoDisc extends Disc implements Playable {
     private static int nbDigitalVideoDiscs = 0;
@@ -29,10 +29,6 @@ public class DigitalVideoDisc extends Disc implements Playable {
 
     public String toString() {
         return "DVD - " + this.getTitle() + " - " + this.getCategory() + " - " + this.getDirector() + " - " + this.getLength() + ": " + this.getCost() + " $";
-    }
-
-    public boolean isMatch(String title) {
-        return this.getTitle().toLowerCase().contains(title.toLowerCase());
     }
 
     public void play() {
