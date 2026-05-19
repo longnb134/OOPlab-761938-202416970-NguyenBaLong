@@ -2,6 +2,7 @@ package hust.soict.dsai.aims.screen.manager;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 import hust.soict.dsai.aims.media.Media;
 import hust.soict.dsai.aims.media.Playable;
 
@@ -24,6 +25,20 @@ public class MediaStore extends JPanel {
 
         if (media instanceof Playable) {
             JButton playButton = new JButton("Play");
+            playButton.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    JDialog dialog = new JDialog();
+                    dialog.setTitle("Play Media");
+                    dialog.setSize(300, 200);
+                    dialog.setLayout(new BorderLayout());
+                    
+                    JLabel msg = new JLabel("Playing: " + media.getTitle(), SwingConstants.CENTER);
+                    dialog.add(msg, BorderLayout.CENTER);
+                    
+                    dialog.setLocationRelativeTo(null);
+                    dialog.setVisible(true);
+                }
+            });
             container.add(playButton);
         }
 
