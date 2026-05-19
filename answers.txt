@@ -1,0 +1,16 @@
+CÂU TRẢ LỜI CÁC CÂU HỎI LAB 04 (MỤC 1.3)
+
+Câu 1: So sánh các container cấp cao nhất (top-level containers) trong Swing và AWT.
+Trả lời:
+- Trong AWT, container cấp cao nhất là "Frame". Các thành phần (components) được add trực tiếp vào Frame.
+- Trong Swing, container cấp cao nhất là "JFrame". Các thành phần không thể add trực tiếp vào JFrame mà phải add thông qua tấm nền nội dung (content-pane) của JFrame.
+
+Câu 2: So sánh tên các lớp thành phần trong AWT và tên các lớp tương ứng trong Swing.
+Trả lời:
+- Các thành phần của AWT không có tiền tố đứng trước (Ví dụ: Label, TextField, Button).
+- Các thành phần của Swing có tiền tố là chữ 'J' đứng ở đầu (Ví dụ: JLabel, JTextField, JButton).
+
+Câu 3: So sánh cơ chế xử lý sự kiện (event-handling) và giao diện hiển thị kết quả của ứng dụng Swing và AWT.
+Trả lời:
+- Về xử lý sự kiện: Cả AWT và Swing đều dùng chung một cơ chế xử lý sự kiện dựa trên Mô hình ủy quyền sự kiện (Delegation Event Model) - sử dụng ActionEvent và ActionListener.
+- Về giao diện hiển thị: AWT phụ thuộc vào hệ điều hành của máy tính nên giao diện sẽ thay đổi tùy theo máy (heavyweight). Swing tự vẽ các thành phần bằng code Java nên giao diện sẽ đồng nhất trên mọi hệ điều hành (lightweight), nhìn hiện đại và dễ tùy biến hơn.
