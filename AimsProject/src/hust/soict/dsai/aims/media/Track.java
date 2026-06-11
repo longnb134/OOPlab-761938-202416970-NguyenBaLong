@@ -18,12 +18,12 @@ public class Track implements Playable {
     }
 
     // Hàm play() từ interface Playable
-    public void play() {
+    public void play() throws hust.soict.dsai.aims.exception.PlayerException {
         if (this.getLength() > 0) {
             System.out.println("Playing Track: " + this.getTitle());
             System.out.println("Track length: " + this.getLength());
         } else {
-            System.out.println("Cannot play Track: " + this.getTitle() + " because its length is 0 or less.");
+            throw new hust.soict.dsai.aims.exception.PlayerException("ERROR: Track length is non-positive!");
         }
     }
 }
