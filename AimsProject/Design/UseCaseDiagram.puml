@@ -1,9 +1,21 @@
 @startuml
 left to right direction
+skinparam shadowing false
+skinparam usecase {
+    BackgroundColor White
+    BorderColor Black
+    ArrowColor Black
+    FontName Arial
+}
+skinparam actor {
+    BackgroundColor White
+    BorderColor Black
+}
+
 actor "Customer" as C
 actor "Store Manager" as M
 
-package AIMS {
+package "AIMS System" {
   usecase "View Store" as UC1
   usecase "View Cart" as UC2
   usecase "Add Media to Cart" as UC3
@@ -26,11 +38,11 @@ C --> UC7
 M --> UC8
 M --> UC9
 
-UC1 .> UC3 : extends
-UC1 .> UC5 : extends
-UC2 .> UC4 : extends
-UC2 .> UC5 : extends
-UC2 .> UC6 : extends
-UC2 .> UC7 : extends
+UC1 .> UC3 : <<extend>>
+UC1 .> UC5 : <<extend>>
+UC2 .> UC4 : <<extend>>
+UC2 .> UC5 : <<extend>>
+UC2 .> UC6 : <<extend>>
+UC2 .> UC7 : <<extend>>
 
 @enduml

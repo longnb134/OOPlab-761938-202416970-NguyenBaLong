@@ -1,4 +1,13 @@
 @startuml
+skinparam shadowing false
+skinparam class {
+    BackgroundColor White
+    BorderColor Black
+    ArrowColor Black
+    FontName Arial
+}
+skinparam linetype ortho
+
 abstract class Media {
   - id: int
   - title: String
@@ -80,8 +89,8 @@ class PlayerException extends java.lang.Exception {
 class LimitExceededException extends java.lang.Exception {
 }
 
+Store o-up- Media : contains >
+Cart o-down- Media : contains >
 CompactDisc "1" *-- "*" Track : contains >
-Cart o-- Media : contains >
-Store o-- Media : contains >
 
 @enduml
