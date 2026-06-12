@@ -14,3 +14,13 @@ Câu 3: So sánh cơ chế xử lý sự kiện (event-handling) và giao diện
 Trả lời:
 - Về xử lý sự kiện: Cả AWT và Swing đều dùng chung một cơ chế xử lý sự kiện dựa trên Mô hình ủy quyền sự kiện (Delegation Event Model) - sử dụng ActionEvent và ActionListener.
 - Về giao diện hiển thị: AWT phụ thuộc vào hệ điều hành của máy tính nên giao diện sẽ thay đổi tùy theo máy (heavyweight). Swing tự vẽ các thành phần bằng code Java nên giao diện sẽ đồng nhất trên mọi hệ điều hành (lightweight), nhìn hiện đại và dễ tùy biến hơn.
+
+------------------------------------------------------------------
+
+CÂU TRẢ LỜI CÁC CÂU HỎI LAB 05
+
+Câu 1 (Mục 11): The Aims class must be updated to handle any exceptions generated when the play() methods are called. What happens when you don’t update for them to catch?
+Trả lời:
+- Nếu chúng ta không dùng khối try-catch để bắt ngoại lệ (ví dụ như PlayerException) sinh ra từ hàm play(), ngoại lệ này sẽ tự động bị ném ngược lên trên dọc theo call stack.
+- Nếu không có bất kỳ hàm nào đứng ra bắt (catch) lỗi này, chương trình sẽ bị văng (crash) tại luồng đang chạy. JVM sẽ in toàn bộ chi tiết dòng lỗi (stack trace) ra màn hình console.
+- Cụ thể trong ứng dụng giao diện đồ họa (JavaFX/Swing), nếu lỗi xảy ra ở luồng xử lý sự kiện giao diện (như lúc bấm nút Play) mà không được xử lý bằng try-catch, luồng sự kiện đó sẽ bị ngắt giữa chừng. Người dùng sẽ không nhận được bất kỳ hộp thoại cảnh báo nào trên màn hình, trong khi phần mềm thì không hoạt động đúng như mong muốn và console thì báo lỗi đỏ chót. Đứng ở góc độ người dùng thì đây là một trải nghiệm rất tệ.
